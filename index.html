@@ -70,10 +70,13 @@
 	    labelContainer.childNodes[0].innerHTML = "출입허용";
 	} else  if (prediction[1].className == "nomask" && prediction[1].probability.toFixed(2) >= 0/8 ) {
 	    labelContainer.childNodes[0].innerHTML = "출입불가";
-	} else  if (prediction[2].className == "nomask" && prediction[2].probability.toFixed(2) >= 0/8 ) {
+	} else  if (prediction[2].className == "empty" && prediction[2].probability.toFixed(2) >= 0/8 ) {
 	    labelContainer.childNodes[0].innerHTML = "빈방";
 	} else {
 	    labelContainer.childNodes[0].innerHTML = "인식대상 제외";
+	}
+	// let back = document.querySelector("body")
+	// back.style.backgroundColor="white"
 </script>
 
 </body>
