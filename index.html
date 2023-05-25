@@ -19,6 +19,7 @@
     // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
     // the link to your model provided by Teachable Machine export panel
+	let back = document.querySelector("body")
     const URL = "./my_model/";
 	//C:\Users\ParaB-12\Downloads\tm-my-image-model (1)\my_model
 
@@ -68,12 +69,16 @@
        // }
     if (prediction[0].className == "mask" && prediction[0].probability.toFixed(2) >= 0/8 ) {
 	    labelContainer.childNodes[0].innerHTML = "출입허용";
+	    back.style.backgroundColor="blue"
 	} else  if (prediction[1].className == "nomask" && prediction[1].probability.toFixed(2) >= 0/8 ) {
 	    labelContainer.childNodes[0].innerHTML = "출입불가";
+		back.style.backgroundColor="green"
 	} else  if (prediction[2].className == "empty" && prediction[2].probability.toFixed(2) >= 0/8 ) {
 	    labelContainer.childNodes[0].innerHTML = "빈방";
+		back.style.backgroundColor="yellow"
 	} else {
 	    labelContainer.childNodes[0].innerHTML = "인식대상 제외";
+		back.style.backgroundColor="pink"
 	}
 	// let back = document.querySelector("body")
 	// back.style.backgroundColor="white"
